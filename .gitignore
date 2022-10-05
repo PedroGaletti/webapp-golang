@@ -1,0 +1,23 @@
+### Visual Studio Code ###
+.vscode/
+
+### Git ###
+.git/
+
+### Other Files ###
+vendor/
+debug/
+.DS_Store
+
+### Binaries and Plugins ###
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+### Test binary ###
+*.test
+
+### Coverage output ###
+*.out
