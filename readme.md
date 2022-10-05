@@ -7,6 +7,15 @@ Simple example of how to create a web application using golang and how to write 
 - [Golang](https://go.dev) - Build fast, reliable, and efficient software at scale
 - [HTML](https://developer.mozilla.org/docs/Web/HTML) - HyperText Markup Language
 
+## Project structure
+
+```
+$PROJECT_ROOT
+├── html             # Html files
+├── data             # Data files
+└── main.go          # Entry point
+```
+
 ## About
 
 - [Hello Page](http://localhost:8080/hello) - /hello

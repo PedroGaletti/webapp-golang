@@ -56,10 +56,10 @@ func PortgueseHandler(writer http.ResponseWriter, request *http.Request) {
 }
 
 func InteractHandler(writer http.ResponseWriter, request *http.Request) {
-	vals := Values("todos.txt")
+	vals := Values("data/todos.txt")
 	fmt.Printf("%#v\n", vals)
 
-	template, err := template.ParseFiles("view.html")
+	template, err := template.ParseFiles("html/view.html")
 	ErrorCheck(err)
 
 	todos := Todo{
@@ -71,7 +71,7 @@ func InteractHandler(writer http.ResponseWriter, request *http.Request) {
 }
 
 func NewHandler(writer http.ResponseWriter, request *http.Request) {
-	template, err := template.ParseFiles("new.html")
+	template, err := template.ParseFiles("html/new.html")
 	ErrorCheck(err)
 	template.Execute(writer, nil)
 }
@@ -79,7 +79,7 @@ func NewHandler(writer http.ResponseWriter, request *http.Request) {
 func CreateHandler(writer http.ResponseWriter, request *http.Request) {
 	todo := request.FormValue("todo")
 
-	file, err := os.OpenFile("todos.txt", os.O_WRONLY|os.O_APPEND|os.O_CREATE, os.FileMode(0600))
+	file, err := os.OpenFile("data/todos.txt", os.O_WRONLY|os.O_APPEND|os.O_CREATE, os.FileMode(0600))
 	ErrorCheck(err)
 
 	_, err = fmt.Fprintf(file, "\n"+todo)
